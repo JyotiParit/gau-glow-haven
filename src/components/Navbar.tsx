@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
@@ -12,6 +12,32 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    // Load theme from localStorage or detect system preference
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    setTheme(initialTheme);
+    applyTheme(initialTheme);
+  }, []);
+
+  const applyTheme = (newTheme: "light" | "dark") => {
+    const html = document.documentElement;
+    if (newTheme === "dark") {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+    localStorage.setItem("theme", newTheme);
+  };
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    applyTheme(newTheme);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
@@ -12,6 +12,32 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    // Load theme from localStorage or detect system preference
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    setTheme(initialTheme);
+    applyTheme(initialTheme);
+  }, []);
+
+  const applyTheme = (newTheme: "light" | "dark") => {
+    const html = document.documentElement;
+    if (newTheme === "dark") {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+    localStorage.setItem("theme", newTheme);
+  };
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    applyTheme(newTheme);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
@@ -32,10 +58,19 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground" aria-label="Toggle menu">
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Theme toggle + Mobile menu toggle */}
+        <div className="flex items-center gap-4">
+          <button
+            onClick={toggleTheme}
+            className="p-2 text-foreground hover:bg-primary/10 rounded-lg transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
+          <button onClick={() => setOpen(!open)} className="md:hidden text-foreground" aria-label="Toggle menu">
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

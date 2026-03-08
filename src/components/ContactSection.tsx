@@ -37,7 +37,7 @@ const ContactSection = () => {
               <Mail size={20} className="text-primary mt-1 shrink-0" />
               <div>
                 <h4 className="font-body font-medium text-foreground">Email</h4>
-                <a href="mailto:gaucandles@gmail.com" className="font-body text-muted-foreground hover:text-primary transition-colors">gaucandles@gmail.com</a>
+                <a href="mailto:candlesgau@gmail.com" className="font-body text-muted-foreground hover:text-primary transition-colors">candlesgau@gmail.com</a>
               </div>
             </div>
             <div className="flex items-start gap-4">

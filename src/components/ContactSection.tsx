@@ -57,14 +57,14 @@ const ContactSection = () => {
 
             {/* Social buttons */}
             <div className="flex gap-4 pt-4">
-              <a
-                href="https://www.instagram.com/gau_candles"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-primary text-primary-foreground font-body text-sm tracking-wider uppercase hover:bg-primary/90 transition-colors"
-              >
-                Instagram
-              </a>
+               <a
+                 href="https://www.instagram.com/candles_gau"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-primary text-primary-foreground font-body text-sm tracking-wider uppercase hover:bg-primary/90 transition-colors"
+               >
+                 Instagram
+               </a>
               <a
                 href={`https://wa.me/919284899928?text=${encodeURIComponent("Hi! I'm interested in Gau Candles.")}`}
                 target="_blank"

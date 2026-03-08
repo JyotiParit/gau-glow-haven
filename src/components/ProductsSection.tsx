@@ -10,6 +10,9 @@ import mandalaWrap from "@/assets/candle-mandala-wrap.jpeg";
 import heartGiftSet from "@/assets/candle-heart-gift-set.jpeg";
 import flowerShaped from "@/assets/candle-flower-shaped.jpeg";
 import roseGarden from "@/assets/candle-rose-garden.jpeg";
+import lavenderLuxe from "@/assets/candle-lavender-luxe.jpeg";
+import honeyWarmth from "@/assets/candle-honey-warmth.jpeg";
+import berryBliss from "@/assets/candle-berry-bliss.jpeg";
 
 const products = [
   { name: "Rose Petal Bliss", category: "Aromatherapy", img: pinkJar },

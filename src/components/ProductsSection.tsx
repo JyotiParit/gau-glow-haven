@@ -5,6 +5,11 @@ import blue from "@/assets/candle-blue.jpeg";
 import thankyou from "@/assets/candle-thankyou.jpeg";
 import giftBag from "@/assets/candle-gift-bag.jpeg";
 import giftBox from "@/assets/candle-giftbox.jpeg";
+import ethnicWrap from "@/assets/candle-ethnic-wrap.jpeg";
+import mandalaWrap from "@/assets/candle-mandala-wrap.jpeg";
+import heartGiftSet from "@/assets/candle-heart-gift-set.jpeg";
+import flowerShaped from "@/assets/candle-flower-shaped.jpeg";
+import roseGarden from "@/assets/candle-rose-garden.jpeg";
 
 const products = [
   { name: "Rose Petal Bliss", category: "Aromatherapy", img: pinkJar },
@@ -13,6 +18,11 @@ const products = [
   { name: "Thank You Candle", category: "Gift Set", img: thankyou },
   { name: "Party Favour", category: "Gift Set", img: giftBag },
   { name: "Holiday Gift Box", category: "Gift Set", img: giftBox },
+  { name: "Ethnic Elegance", category: "Decorative", img: ethnicWrap },
+  { name: "Mandala Harmony", category: "Decorative", img: mandalaWrap },
+  { name: "Sweetheart Bliss", category: "Gift Set", img: heartGiftSet },
+  { name: "Floral Dreams", category: "Decorative", img: flowerShaped },
+  { name: "Rose Garden Romance", category: "Aromatherapy", img: roseGarden },
 ];
 
 const ProductsSection = () => (

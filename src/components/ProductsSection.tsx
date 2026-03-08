@@ -26,6 +26,9 @@ const products = [
   { name: "Sweetheart Bliss", category: "Gift Set", img: heartGiftSet },
   { name: "Floral Dreams", category: "Decorative", img: flowerShaped },
   { name: "Rose Garden Romance", category: "Aromatherapy", img: roseGarden },
+  { name: "Lavender Luxe", category: "Aromatherapy", img: lavenderLuxe },
+  { name: "Honey Warmth", category: "Decorative", img: honeyWarmth },
+  { name: "Berry Bliss", category: "Aromatherapy", img: berryBliss },
 ];
 
 const ProductsSection = () => (
